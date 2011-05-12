@@ -113,3 +113,8 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 	'django.core.context_processors.request',
 	#'context_processors.get_clients',
 )
+
+try:
+    from settings_local import *
+except:
+    pass
