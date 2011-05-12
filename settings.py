@@ -1,11 +1,16 @@
 # Django settings for ssp project.
 import os
+import sys
+
+PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 
 def rel(*x):
     return os.path.join(os.path.abspath(os.path.dirname(__file__)), *x)
 
 DEBUG =True
 TEMPLATE_DEBUG = DEBUG
+
+sys.path.append(PROJECT_ROOT)
 
 ADMINS = (
     # ('Your Name', 'your_email@domain.com'),
@@ -104,6 +109,7 @@ INSTALLED_APPS = (
      'django.contrib.admin',
     # Uncomment the next line to enable admin documentation:
      'django.contrib.admindocs',
+    'etcs',
 )
 TEMPLATE_CONTEXT_PROCESSORS = (
 	'django.core.context_processors.auth',
